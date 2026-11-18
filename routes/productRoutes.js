@@ -5,7 +5,7 @@ const { addcarts, getAllcartProducts, removeFromcart } = require('../controllers
 const router = express.Router()
 const authMiddleware = require('../middlewares/authMiddleware')
 
-router.post('/addproduct' , addProducts )
+router.post('/addproduct', authMiddleware, addProducts)
 router.get('/getproducts' , getAllProducts )
 router.post('/addfav',authMiddleware , addFavs )
 router.get('/addfav',authMiddleware , getAllfavProducts )
